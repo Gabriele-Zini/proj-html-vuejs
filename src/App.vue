@@ -18,4 +18,7 @@ export default {
     <AppFooter />
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+@use './style/general.scss';
+@use "@fortawesome/fontawesome-free/css/all.css";
+</style>
