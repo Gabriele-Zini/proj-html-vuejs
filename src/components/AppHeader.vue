@@ -1,5 +1,15 @@
 <script>
+import AppBigCard from './AppBigCard.vue'
+import { store } from '../store.js'
 export default {
+    data() {
+        return {
+            store,
+        }
+    },
+    components: {
+        AppBigCard,
+    },
     props: {
         menu: Object,
     }
@@ -8,7 +18,7 @@ export default {
 
 <template>
     <header>
-        <div class="container">
+        <div class="container-md">
 
             <!-- navbar -->
             <nav class="d-flex justify-content-between align-items-center">
@@ -37,7 +47,9 @@ export default {
             <!-- /navbar -->
         </div>
 
-        <div class="ms_hero"></div>
+        <div class="ms_hero container-md">
+            <AppBigCard :hero="store.hero" />
+        </div>
     </header>
 </template>
 
@@ -47,8 +59,7 @@ export default {
 header {
     background-color: $primary-background-color;
     background-image: url('../assets/img/background-pattern-wavify.png');
-    /* debug */
-    height: 600px;
+    
 
     nav {
         height: 80px;
@@ -65,6 +76,7 @@ header {
                 font-size: .7rem;
             }
         }
+
         .fa-brands {
             font-size: 1.2rem;
             color: $primary-header-color;
