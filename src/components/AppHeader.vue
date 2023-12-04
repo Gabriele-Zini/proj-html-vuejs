@@ -5,6 +5,7 @@ export default {
     data() {
         return {
             store,
+            heroBoolean: true,
         }
     },
     components: {
@@ -48,7 +49,7 @@ export default {
         </div>
 
         <div class="ms_hero container-md">
-            <AppBigCard :hero="store.hero" />
+            <AppBigCard :hero="store.hero" :heroBoolean="heroBoolean"  />
         </div>
     </header>
 </template>
