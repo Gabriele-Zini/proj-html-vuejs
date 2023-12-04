@@ -24,7 +24,7 @@ export default {
                 <!-- /menu items list -->
 
                 <!-- social logo link list -->
-                <ul class="list-unstyled d-flex gap-3">
+                <ul class="list-unstyled d-flex gap-4 my-0">
                     <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
                     <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
                     <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
@@ -59,10 +59,15 @@ header {
 
         a {
             text-decoration: none;
+            color: $secondary-header-color;
 
             .fa-angle-down {
                 font-size: .7rem;
             }
+        }
+        .fa-brands {
+            font-size: 1.2rem;
+            color: $primary-header-color;
         }
     }
 }
