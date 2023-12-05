@@ -10,9 +10,9 @@ export default {
         getImage(imgPath) {
             return new URL(`../assets/img/home-movation-${imgPath}`, import.meta.url).href;
         },
-        props: {
-            resultData: Array,
-        }
+    },
+    props: {
+        resultData: Array,
     }
 }
 </script>
@@ -21,7 +21,7 @@ export default {
     <div class="ms_container-section">
 
         <ul class="list-unstyled d-flex justify-content-center">
-            <li v-for="result in store.resultData" class="d-flex justify-content-center flex-column align-items-center">
+            <li v-for="result in resultData" class="d-flex justify-content-center flex-column align-items-center">
                 <p>{{ result.rate }}</p>
                 <p class="text-uppercase">{{ result.category }}</p>
             </li>
