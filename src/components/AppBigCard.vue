@@ -5,8 +5,6 @@ export default {
     data() {
         return {
             store,
-            getStarted: "get started for free", //contenuto del button
-            isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
             currentIndex: 0,
             idArray: [],
         }
@@ -36,6 +34,7 @@ export default {
             if (this.currentIndex < this.idArray.length - 1) {
                 this.currentIndex++
             } else {
+                // Se l'indice corrente è l'ultimo, vai al primo
                 this.currentIndex = 0
             }
 
@@ -45,7 +44,7 @@ export default {
 
     props: {
         hero: Object,
-        heroBoolean: Boolean,
+        bigCard: Array,
     },
     components: {
         AppButton
@@ -55,23 +54,10 @@ export default {
 </script>
 
 <template>
-    <!-- hero -->
-    <div class="d-flex" v-if="heroBoolean">
-        <div class="d-flex flex-column justify-content-center ms_hero">
-            <h5 class="text-uppercase"> {{ store.bigCardData.hero.overtitle }}</h5>
-            <h2 class="text-capitalize">{{ store.bigCardData.hero.title }}</h2>
-            <p>{{ store.bigCardData.hero.paragraph }}</p>
-            <AppButton :isArrow="isArrow" :getStarted="getStarted" />
-        </div>
-        <img :src="getImage(store.bigCardData.hero.imgPath)" alt="">
-    </div>
-    <!-- /hero -->
-
-
     <!-- big card 2 -->
-    <div v-for="(item, index) in store.bigCardData.bigCard2" :class="{ 'd-none': currentIndex !== index }">
-        <div class="d-flex ms_big-card" v-if="!heroBoolean">
-            <div class="d-flex flex-column justify-content-center">
+    <div v-for="(item, index) in bigCard" :class="{ 'd-none': currentIndex !== index }">
+        <div class="d-flex ms_big-card">
+            <div class="d-flex flex-column justify-content-center w-50">
                 <h5 class="text-uppercase"> {{ item.overtitle }}</h5>
                 <p>{{ item.paragraph }}</p>
                 <img class="ms_avatar" :src="getAvatar(item.avatar.imgPath)" alt="">
@@ -111,6 +97,9 @@ export default {
 }
 
 /* /hero style */
+
+
+/*big card 2 style*/
 .ms_big-card {
     background-image: url('../assets/img/background-pattern-wavify.png');
     background-color: $primary-background-color;
@@ -154,6 +143,10 @@ export default {
         border-color: $secondary-button-color transparent transparent transparent;
         top: 80%;
         cursor: pointer;
+
+        &:hover {
+            border-color: black transparent transparent transparent;
+        }
     }
 
     .ms_prev-button {
@@ -162,6 +155,12 @@ export default {
         top: 20%;
         cursor: pointer;
 
+        &:hover {
+            border-color: transparent transparent black transparent;
+        }
+
     }
+
+    /* /big card 2 style*/
 }
 </style>

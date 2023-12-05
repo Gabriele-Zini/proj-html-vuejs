@@ -1,18 +1,28 @@
 <script>
 import AppBigCard from './AppBigCard.vue'
 import { store } from '../store.js'
+import AppButton from './AppButton.vue';
 export default {
     data() {
         return {
             store,
-            heroBoolean: true,
+            getStarted: "get started for free", //contenuto del button
+            isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
+            
+
         }
     },
     components: {
-        AppBigCard,
+        AppBigCard, AppButton,
     },
     props: {
         menu: Object,
+        hero: Object,
+    },
+    methods: {
+        getImage(imgPath) {
+            return new URL(`../assets/img/home-movation-${imgPath}`, import.meta.url).href;
+        },
     }
 }
 </script>
@@ -49,7 +59,22 @@ export default {
         </div>
 
         <div class="ms_hero container-md">
-            <AppBigCard :hero="store.hero" :heroBoolean="heroBoolean"  />
+
+
+
+            <!-- hero -->
+            <div class="d-flex">
+                <div class="d-flex flex-column justify-content-center ms_hero">
+                    <h5 class="text-uppercase"> {{ hero.overtitle }}</h5>
+                    <h2 class="text-capitalize">{{ hero.title }}</h2>
+                    <p>{{ hero.paragraph }}</p>
+                    <AppButton :isArrow="isArrow" :getStarted="getStarted" />
+                </div>
+                <img :src="getImage(hero.imgPath)" alt="">
+            </div>
+            <!-- /hero -->
+
+
         </div>
     </header>
 </template>
@@ -60,7 +85,7 @@ export default {
 header {
     background-color: $primary-background-color;
     background-image: url('../assets/img/background-pattern-wavify.png');
-    
+
 
     nav {
         height: 80px;

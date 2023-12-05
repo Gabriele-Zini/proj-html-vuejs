@@ -6,7 +6,6 @@ export default {
     data() {
         return {
             store,
-            heroBoolean: true,
         }
     },
     components: {
@@ -16,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <AppBigCard :heroBoolean="!heroBoolean" />
+    <AppBigCard :bigCard="store.bigCardData.bigCard2"/>
 </template>
 
 <style scoped lang="scss"></style>

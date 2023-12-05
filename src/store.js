@@ -48,8 +48,8 @@ export const store = reactive({
       {
         overtitle: "real stories",
         paragraph:
-          "I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for peaple like me.",
-        avatar: { imgPath: "01.jpg", name: "Mina Hollace" },
+          "Great study portal for peaple like me.",
+        avatar: { imgPath: "01.jpg", name: "John Milton" },
         imgPath: "testimonial-image.jpg",
         id: 1,
       },
@@ -65,7 +65,7 @@ export const store = reactive({
         overtitle: "real stories",
         paragraph:
           "I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for peaple like me.",
-        avatar: { imgPath: "03.jpg", name: "Mina Hollace" },
+        avatar: { imgPath: "03.jpg", name: "William Burningham" },
         imgPath: "testimonial-image.jpg",
         id: 3,
       },
@@ -73,7 +73,7 @@ export const store = reactive({
         overtitle: "real stories",
         paragraph:
           "I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for peaple like me.",
-        avatar: { imgPath: "04.jpg", name: "Mina Hollace" },
+        avatar: { imgPath: "04.jpg", name: "Hal Ford" },
         imgPath: "testimonial-image.jpg",
         id: 4,
       },
