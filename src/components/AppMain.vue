@@ -2,15 +2,18 @@
 import { store } from '../store'
 import AppCard from './AppCard.vue';
 import AppBigCard from './AppBigCard.vue';
+import AppButton from './AppButton.vue';
 export default {
     data() {
         return {
             store,
             hasButton: true,
+            buttonText: "View all courses",
+            isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
         }
     },
     components: {
-        AppCard, AppBigCard,
+        AppCard, AppBigCard, AppButton
     }
 }
 </script>
@@ -19,8 +22,11 @@ export default {
     <div class="mt-5">
         <h5 class="text-uppercase fs-6 text-center">begin your journey at maxcoach</h5>
         <h2 class="text-center">Latest <span>Online Courses</span> </h2>
-        <div class="container-md py-5">
+        <div class="container-md pt-5">
             <AppCard :appCard="store.littleCard1" />
+        </div>
+        <div class="d-flex justify-content-center pb-5">
+            <AppButton :buttonText="buttonText" :isArrow="isArrow" />
         </div>
     </div>
     <AppBigCard :bigCard="store.bigCardData" />
@@ -30,12 +36,9 @@ export default {
             <h2 class="text-left">Latest <span>Online Courses</span> </h2>
         </div>
         <div class="container-md">
-            <AppCard :appCard="store.littleCard2" :hasButton="hasButton"/>
-           
+            <AppCard :appCard="store.littleCard2" :hasButton="hasButton" />
         </div>
     </div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

@@ -6,30 +6,34 @@ export default {
             store,
             showAllPosts: false,
             maxVisiblePosts: 4,
-            
+
         }
     },
     props: {
         appCard: Object,
-        hasButton:Boolean,
+        hasButton: Boolean, /* valore booleano per gestire la presenza o meno del bottone toggleAllPosts nelle card */
 
     },
     methods: {
         getImage(imgPath) {
             return new URL(`../assets/img/motivation-${imgPath}`, import.meta.url).href;
         },
+
+       /*  metodo per formattare il paragrafo e visualizzare massimo i primi 49 caratteri */
         getShortenedParagraph(paragraph) {
             const maxLength = 49;
             if (paragraph.length <= maxLength) {
                 return paragraph;
             } else {
-                return paragraph.substring(0, maxLength) + "...";
+                return paragraph.substring(0, maxLength) + "..."; /* metodo substring per sostituire i caratteri del paragrafo maggiori di 49 */
             }
         },
 
+       /* metodo per determinare la condizione per far visualizzare di default solo i primi 4 posts */
         shouldHide(item, index) {
             return !this.showAllPosts && item.title && index >= this.maxVisiblePosts;
         },
+       /*  metodo per mostrare o nascondere tutti i posts */
         toggleAllPosts() {
             this.maxVisiblePosts = this.showAllPosts ? 4 : this.store.littleCard2.length;
             this.showAllPosts = !this.showAllPosts;
@@ -41,6 +45,8 @@ export default {
 
 <template>
     <div class="row justify-content-between">
+
+        <!-- card -->
         <div v-for="(item, index) in appCard" :key="index" class="card col-3 p-0 ms_card-4"
             :class="{ 'ms_card col-md-4': item.price, 'd-none': item.title && shouldHide(item, index) }">
             <img :src="getImage(item.imgPath)" class="card-img-top " alt="...">
@@ -60,13 +66,18 @@ export default {
                     <p><i class="fa-regular fa-user me-2"></i> {{ item.numberStudent }} Students</p>
                 </div>
             </div>
-
         </div>
+        <!-- /card -->
+
+        <!-- show more posts button with a boolean prop -->
         <div v-if="hasButton">
             <div v-if="!showAllPosts" @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">view all posts
             </div>
             <div v-else @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">less posts</div>
         </div>
+        <!-- /show more posts button with a boolean prop -->
+
+
     </div>
 </template>
 
