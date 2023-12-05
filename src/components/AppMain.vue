@@ -5,6 +5,7 @@ import AppBigCard from './AppBigCard.vue';
 import AppButton from './AppButton.vue';
 import AppBook from './AppBook.vue';
 import AppClientLogo from './AppClientLogo.vue';
+import AppAboutMe from './AppAboutMe.vue';
 export default {
     data() {
         return {
@@ -13,10 +14,11 @@ export default {
             buttonText: "View all courses",
             isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
             href: "",
+            
         }
     },
     components: {
-        AppCard, AppBigCard, AppButton, AppBook, AppClientLogo
+        AppCard, AppBigCard, AppButton, AppBook, AppClientLogo, AppAboutMe,
     }
 }
 </script>
@@ -25,6 +27,9 @@ export default {
 <template>
     <main>
         <!-- about me section -->
+        <div class="container-md">
+            <AppAboutMe :resultData="store.resultData"/>
+        </div>
         <!-- /about me section -->
 
         <!-- online courses section -->

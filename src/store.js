@@ -234,4 +234,25 @@ export const store = reactive({
     },
   ],
   /* /CLIENT LOGO */
+
+  /*  RESULTS DATA */
+  resultData: [
+    {
+      rate: "1926",
+      category: "finished sessions",
+    },
+    {
+      rate: "100%",
+      category: "finished sessions",
+    },
+    {
+      rate: "3092+",
+      category: "enrolled learners",
+    },
+    {
+      rate: "200",
+      category: "online instructors",
+    },
+  ],
+  /*  /RESULTS DATA */
 });
