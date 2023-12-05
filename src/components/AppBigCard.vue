@@ -9,9 +9,18 @@ export default {
             idArray: [],
         }
     },
+
+    props: {
+        hero: Object,
+        bigCard: Array,
+    },
+    components: {
+        AppButton
+    },
+
     mounted() {
         // Inizializza l'array degli ID una volta montato il componente
-        return this.idArray = this.store.bigCardData.bigCard2.map(obj => obj.id);
+        return this.idArray = this.store.bigCardData.map(obj => obj.id);
     },
 
     methods: {
@@ -42,28 +51,22 @@ export default {
     },
 
 
-    props: {
-        hero: Object,
-        bigCard: Array,
-    },
-    components: {
-        AppButton
-    }
 
 }
 </script>
 
 <template>
     <!-- big card 2 -->
-    <div v-for="(item, index) in bigCard" :class="{ 'd-none': currentIndex !== index }">
-        <div class="d-flex ms_big-card">
-            <div class="d-flex flex-column justify-content-center w-50">
+    <div v-for="(item, index) in bigCard" :class="{ 'd-none': currentIndex !== index }" class=" ms_big-card ">
+        <div class="d-flex">
+            <div class="d-flex flex-column justify-content-center w-50 align-items-center ms_paragraph">
                 <h5 class="text-uppercase"> {{ item.overtitle }}</h5>
-                <p>{{ item.paragraph }}</p>
-                <img class="ms_avatar" :src="getAvatar(item.avatar.imgPath)" alt="">
+                <p class="my-5">{{ item.paragraph }}</p>
+                <img class="ms_avatar mb-4" :src="getAvatar(item.avatar.imgPath)" alt="">
                 <p class="text-center">{{ item.avatar.name }}</p>
+                <p class="fs-6">/ {{ item.avatar.job }}</p>
             </div>
-            <img class="w-50" :src="getImage(item.imgPath)" alt="">
+            <img class="w-50 object-fit-contain" :src="getImage(item.imgPath)" alt="">
             <div class="ms_next-prev-btn"><span @click="prevButton()" class="ms_prev-button"></span>{{ item.id }} / 4
                 <span @click="nextButton" class="ms_next-button"></span>
             </div>
@@ -137,6 +140,15 @@ export default {
 
     }
 
-    /* /big card 2 style*/
+    .ms_paragraph {
+        margin:0 10rem;
+        text-align: center;
+        line-height: 2.4rem;
+        font-size: 1.4rem;
+       
+    }
+
 }
+
+/* /big card 2 style*/
 </style>

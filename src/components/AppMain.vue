@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <AppBigCard :bigCard="store.bigCardData.bigCard2"/>
+        <AppBigCard :bigCard="store.bigCardData" />
 </template>
 
 <style scoped lang="scss"></style>
