@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-    <AppHeader :menu="store.menu" :hero="store.bigCardData.hero" />
+    <AppHeader :menu="store.menu" :hero="store.hero" />
     <AppMain />
     <AppFooter />
 </template>
