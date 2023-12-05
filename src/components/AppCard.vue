@@ -4,10 +4,14 @@ export default {
     data() {
         return {
             store,
+            showAllPosts: false,
+            maxVisiblePosts: 4,
+            
         }
     },
     props: {
         appCard: Object,
+        hasButton:Boolean,
 
     },
     methods: {
@@ -21,7 +25,14 @@ export default {
             } else {
                 return paragraph.substring(0, maxLength) + "...";
             }
+        },
 
+        shouldHide(item, index) {
+            return !this.showAllPosts && item.title && index >= this.maxVisiblePosts;
+        },
+        toggleAllPosts() {
+            this.maxVisiblePosts = this.showAllPosts ? 4 : this.store.littleCard2.length;
+            this.showAllPosts = !this.showAllPosts;
         },
     }
 }
@@ -30,9 +41,10 @@ export default {
 
 <template>
     <div class="row justify-content-between">
-        <div class="card col-3 p-0 ms_card-4" :class="{ 'ms_card col-md-4': item.price }" v-for="item in appCard">
+        <div v-for="(item, index) in appCard" :key="index" class="card col-3 p-0 ms_card-4"
+            :class="{ 'ms_card col-md-4': item.price, 'd-none': item.title && shouldHide(item, index) }">
             <img :src="getImage(item.imgPath)" class="card-img-top " alt="...">
-            <div class="card-body px-4">
+            <div class="card-body p-0 mt-4" :class="{ 'px-4': item.price }">
                 <p v-if="item.title"><i class="fa-regular fa-calendar me-2"></i>{{ item.date }}</p>
                 <h5 class="card-title" v-if="item.title">
                     {{ item.title }}
@@ -50,12 +62,19 @@ export default {
             </div>
 
         </div>
+        <div v-if="hasButton">
+            <div v-if="!showAllPosts" @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">view all posts
+            </div>
+            <div v-else @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">less posts</div>
+        </div>
     </div>
 </template>
 
 <style scoped lang="scss">
 .ms_card-4 {
     width: calc(100% / 4 - 2rem);
+    margin-bottom: 2.5rem;
+    border: none;
 }
 
 .ms_card {
@@ -69,5 +88,13 @@ export default {
     .ms_price-after-decimal {
         font-size: 0.8em;
     }
+}
+
+.ms_all-posts-button {
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
 }
 </style>

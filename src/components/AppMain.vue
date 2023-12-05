@@ -6,6 +6,7 @@ export default {
     data() {
         return {
             store,
+            hasButton: true,
         }
     },
     components: {
@@ -29,9 +30,12 @@ export default {
             <h2 class="text-left">Latest <span>Online Courses</span> </h2>
         </div>
         <div class="container-md">
-            <AppCard :appCard="store.littleCard2" />
+            <AppCard :appCard="store.littleCard2" :hasButton="hasButton"/>
+           
         </div>
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+</style>

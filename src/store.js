@@ -114,6 +114,34 @@ export const store = reactive({
       paragraph:
         "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
     },
+    {
+      imgPath: "blog-01-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
+    {
+      imgPath: "blog-02-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
+    {
+      imgPath: "blog-03-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
+    {
+      imgPath: "blog-04-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
   ],
   /* data little card 3 */
 
