@@ -38,6 +38,7 @@ export const store = reactive({
     imgPath: "hero-image.png",
   },
 
+  /*  LITTLE CARD DATA */
   /* data little card 1 */
   littleCard1: [
     {
@@ -143,7 +144,7 @@ export const store = reactive({
         "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
     },
   ],
-  /* data little card 3 */
+  /*  /LITTLE CARD DATA */
 
   /* /BIG CARD DATA */
   /* data big card */
@@ -184,19 +185,53 @@ export const store = reactive({
       id: 4,
     },
   ],
+  /* /BIG CARD DATA */
 
+  /* BOOK STORE DATA */
   bookStore: [
     {
-      imgPath:"product-book-10-400x400.jpg",
+      imgPath: "product-book-10-400x400.jpg",
       title: "Alpha man by MaxCoach",
       price: 29.99,
     },
     {
-      imgPath:"product-book-11-400x400.jpg",
+      imgPath: "product-book-11-400x400.jpg",
       title: "Real Man 4.0 by MaxCoach",
       price: 39.99,
     },
   ],
+  /* /BOOK STORE DATA */
 
-  /* /BIG CARD DATA */
+  /* CLIENT LOGO */
+  clientLogo: [
+    {
+      imgPath: "01",
+      alt: "nome azienda",
+    },
+    {
+      imgPath: "02",
+      alt: "nome azienda",
+    },
+    {
+      imgPath: "03",
+      alt: "nome azienda",
+    },
+    {
+      imgPath: "04",
+      alt: "nome azienda",
+    },
+    {
+      imgPath: "05",
+      alt: "nome azienda",
+    },
+    {
+      imgPath: "06",
+      alt: "nome azienda",
+    },
+    {
+      imgPath: "07",
+      alt: "nome azienda",
+    },
+  ],
+  /* /CLIENT LOGO */
 });
