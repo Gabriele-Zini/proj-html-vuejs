@@ -28,9 +28,6 @@ export const store = reactive({
       href: "",
     },
   ],
-  /* data little card 1 */
-  /* data little card 2 */
-  /* data little card 3 */
 
   /* hero data */
   hero: {
@@ -41,6 +38,84 @@ export const store = reactive({
     imgPath: "hero-image.png",
   },
 
+  /* data little card 1 */
+  littleCard1: [
+    {
+      imgPath: "course-01-480x298.jpg",
+      price: 30.0,
+      paragraph: "how to get successful: Create A Growth Mindset For Success",
+      numberLesson: 3,
+      numberStudent: 50,
+    },
+    {
+      imgPath: "course-02-480x298.jpg",
+      price: 30.0,
+      paragraph: "how to get successful: Create A Growth Mindset For Success",
+      numberLesson: 3,
+      numberStudent: 50,
+    },
+    {
+      imgPath: "course-03-480x298.jpg",
+      price: 30.0,
+      paragraph: "how to get successful: Create A Growth Mindset For Success",
+      numberLesson: 3,
+      numberStudent: 50,
+    },
+    {
+      imgPath: "course-04-480x298.jpg",
+      price: 30.0,
+      paragraph: "how to get successful: Create A Growth Mindset For Success",
+      numberLesson: 3,
+      numberStudent: 50,
+    },
+    {
+      imgPath: "course-05-480x298.jpg",
+      price: 30.0,
+      paragraph: "how to get successful: Create A Growth Mindset For Success",
+      numberLesson: 3,
+      numberStudent: 50,
+    },
+    {
+      imgPath: "course-06-480x298.jpg",
+      price: 30.0,
+      paragraph: "how to get successful: Create A Growth Mindset For Success",
+      numberLesson: 3,
+      numberStudent: 50,
+    },
+  ],
+  /* data little card 2 */
+
+  littleCard2: [
+    {
+      imgPath: "blog-01-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
+    {
+      imgPath: "blog-02-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
+    {
+      imgPath: "blog-03-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
+    {
+      imgPath: "blog-04-480x325.jpg",
+      date: "May 13, 2020",
+      title: "how to stay true to your personal brand",
+      paragraph:
+        "when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want when it comes to your business or career you want ",
+    },
+  ],
+  /* data little card 3 */
 
   /* /BIG CARD DATA */
   /* data big card */
