@@ -75,30 +75,6 @@ export default {
 <style scoped lang="scss">
 @use '../style/partials/_variables.scss' as *;
 
-/* hero style */
-.ms_hero {
-    text-align: left;
-    line-height: 2rem;
-    padding-right: 10rem;
-
-
-    img {
-        background-image: url('../assets/img/home-movation-shape-face.png');
-        background-position: 0 200px;
-        background-repeat: no-repeat;
-
-    }
-
-    h2 {
-        font-size: 3.2rem;
-        padding-right: 10rem;
-        line-height: 5rem;
-    }
-}
-
-/* /hero style */
-
-
 /*big card 2 style*/
 .ms_big-card {
     background-image: url('../assets/img/background-pattern-wavify.png');

@@ -8,7 +8,7 @@ export default {
             store,
             getStarted: "get started for free", //contenuto del button
             isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
-            
+
 
         }
     },
@@ -108,5 +108,29 @@ header {
             color: $primary-header-color;
         }
     }
+
+
+    /* hero style */
+    .ms_hero {
+        text-align: left;
+        line-height: 2rem;
+        padding-right: 5rem;
+
+
+        img {
+            background-image: url('../assets/img/home-movation-shape-face.png');
+            background-position: 0 200px;
+            background-repeat: no-repeat;
+
+        }
+
+        h2 {
+            font-size: 3.2rem;
+            padding-right: 10rem;
+            line-height: 5rem;
+        }
+    }
+
+    /* /hero style */
 }
 </style>
