@@ -9,12 +9,13 @@ export default {
     props: {
         buttonText: String,
         isArrow: Boolean,
+        href:String,
     }
 }
 </script>
 
 <template>
-    <button class="ms_btn">{{ buttonText }} <i v-show="isArrow" class="fa-solid fa-arrow-right ms-2"></i></button>
+    <a :href="href" class="ms_btn">{{ buttonText }} <i v-show="isArrow" class="fa-solid fa-arrow-right ms-2"></i></a>
 </template>
 
 <style lang="scss" scoped>
@@ -28,5 +29,6 @@ export default {
         color: white;
         text-transform: capitalize;
         font-weight: bolder;
+        text-decoration: none;
     }
 </style>

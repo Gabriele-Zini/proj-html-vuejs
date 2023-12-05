@@ -8,6 +8,7 @@ export default {
             store,
             buttonText: "get started for free", //contenuto del button
             isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
+            href:"",
 
 
         }
@@ -68,7 +69,7 @@ export default {
                     <h5 class="text-uppercase"> {{ hero.overtitle }}</h5>
                     <h2 class="text-capitalize">{{ hero.title }}</h2>
                     <p>{{ hero.paragraph }}</p>
-                    <AppButton :isArrow="isArrow" :buttonText="buttonText" />
+                    <AppButton :isArrow="isArrow" :buttonText="buttonText" :href="href" />
                 </div>
                 <img :src="getImage(hero.imgPath)" alt="">
             </div>
