@@ -1,6 +1,6 @@
 # Applicazione MaxCoach Vue.js
 
-Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazione è organizzata in tre componenti principali: l'header, il corpo centrale e il piè di pagina. Utilizziamo anche `reactive` per la gestione dello stato attraverso il nostro store.
+Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazione è organizzata in tre componenti principali: l'header, il main e il footer. Utilizziamo anche `reactive` per la gestione dello stato attraverso il nostro store.
 
 ## Struttura dei Componenti Principali
 
@@ -9,18 +9,18 @@ Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazion
    Il componente AppHeader comprende la navbar che contiene il logo e gli elementi del menu. La sezione hero è anche inclusa nella parte superiore dell'header. Il componente utilizza props per ricevere dati dinamici come il menu e i dettagli hero dallo store.
 
 2. ### AppMain.vue:
-   Il componente `AppMain` rappresenta il corpo centrale dell'applicazione. Questo è il luogo dove verrà visualizzato il contenuto principale dell'applicazione.
+   Il componente `AppMain` rappresenta il corpo centrale dell'applicazione. Questo è il luogo dove verrà visualizzato il suo contenuto principale, diviso in sezioni.
 
 3. ### AppFooter.vue
-   Il componente `AppFooter` rappresenta il piè di pagina dell'applicazione. In questa sezione, possiamo inserire informazioni aggiuntive o collegamenti utili.
+   Il componente `AppFooter` rappresenta footer dell'applicazione. Come l'header, il footer utilizza i props per ricevere i contenuti del menu archiviati nello `store.js`.
 
 4. ### Componenti riutilizzati
    I componenti riutilizzati sono AppCard e AppButton e sono stati pensati per essere il più neutri possibili ai fini della riutilizzazione.
    - #### AppCard: 
-        AppCard è stato riutilizzata in tre contesti di questa Vue app: nella `blog section`, nella `online courses section` e come sotto componente di `AppBook.vue`. Le criticità di poter adattare questo componente sono state risolte utilizzando, a seconda dei contesti e degli elementi dinamici della card, tre diverse soluzioni
-          1. classi dinamiche con il v-bind `:class=""` per applicare dinamicamente gli stili.
-          2. con la direttiva `v-if` per settare la condizione dell'elemento del template nel caso in cui esista (o meno) quell'elemento nella struttura dati richiamata.
-          3. con una `props` booleana. 
+        AppCard è stato riutilizzata in tre contesti di questa Vue app: nella `blog section`, nella `online courses section` e come sotto componente di `AppBook.vue`. Le criticità di poter adattare questo componente sono state risolte utilizzando, a seconda dei contesti e degli elementi dinamici della card, tre diverse soluzioni: <br>
+          1. **classi dinamiche** con il v-bind `:class=""` per applicare dinamicamente gli stili. <br>
+          2. **con la direttiva `v-if`** per settare la condizione dell'elemento del template nel caso in cui esista (o meno) quell'elemento nella struttura dati richiamata. <br>
+          3. **con una `props` booleana**. <br>
    
 
 ```javascript
