@@ -57,14 +57,14 @@ export default {
         <img :src="getImage(item.imgPath)" class="card-img-top " alt="...">
         <div class="card-body p-0 mt-4" :class="{ 'px-4': item.price }">
             <p v-if="item.date"><i class="fa-regular fa-calendar me-2"></i>{{ item.date }}</p>
-            <h5 class="card-title" v-if="item.title" :class="{ 'text-center ': hasHover }">
+            <h5 class="card-title ms_title" v-if="item.title" :class="{ 'text-center ms_title-color': hasHover }">
                 {{ item.title }}
             </h5>
             <div v-if="item.price" :class="{ 'text-center mb-5': hasHover }">
-                <span class="ms_price-before-decimal">{{ item.price.toFixed(0) }}</span>
-                <span class="ms_price-after-decimal">{{ (item.price % 1).toFixed(2).substring(1) }}</span>
+                <span class="ms_price-before-decimal">{{ Math.floor(item.price) }}</span>
+                <span class="ms_price-after-decimal">.{{ (item.price % 1).toFixed(2).slice(2) }}</span>
             </div>
-            <p v-if="item.paragraph" class="card-text">{{ getShortenedParagraph(item.paragraph) }}..</p>
+            <p v-if="item.paragraph" class="card-text ms_paragraph">{{ getShortenedParagraph(item.paragraph) }}</p>
             <div v-if="item.numberLesson || item.numberStudent" class="d-flex justify-content-between">
                 <p><i class="fa-regular fa-file-lines me-2"></i> {{ item.numberLesson }} Lessons
                 </p>
@@ -84,10 +84,19 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use '../style/partials/_variables.scss' as *;
 .ms_card-4 {
     width: calc(100% / 4 - 2rem);
     margin-bottom: 2.5rem;
     border: none;
+}
+.ms_title {
+        font-size:1.5rem;
+        font-weight: bold;
+    }
+
+.ms_title-color {
+    color: $paragraph-color;
 }
 
 .ms_card {
@@ -97,15 +106,27 @@ export default {
 
     .ms_price-before-decimal {
         font-weight: bold;
+        color: $secondary-font-color;
+        font-size: 2rem;
+    }
+
+    .ms_paragraph {
+        font-size:1.5rem;
+        font-weight: bold;
+        color: $paragraph-color;
     }
 
     .ms_price-after-decimal {
-        font-size: 0.8em;
+        font-size: 1.3rem;
+         color: $secondary-font-color;
+         font-weight: bold;
     }
 
     .ms_hover {
         display: none;
     }
+
+   
 
     &:hover {
         transition: box-shadow 0.2s ease;
