@@ -149,9 +149,7 @@ la logica di questa web App riguarda fondamentalmente due componenti: **AppCard*
    
 
  2. in **AppCard** la logica è implementata per mostrare tutte le card o nascondere quelle al di sopra del numero di default.
-   Si dichiara nei data due variabili, una variabile booleana per controllare la stampa di tutte le card e una variabile che determina il numero di post visualizzati di default. Successivamente, nei methods, si implementano due funzioni: una per determinare la condizione per far non far visualizzare le card il cui indice è al di sopra del valore di default dichiarato in **maxVisiblePosts**  e una funzione toggle per mostrare o nascondare tutte le card ad ogni click. L'espressione  `this.showAllPosts = !this.showAllPosts;` ci permette di implementare una funzionalità tipica dei toggles all'interno di una direttiva **@click=""**
-
-
+   Si dichiara nei data due variabili, una variabile booleana per controllare la stampa di tutte le card e una variabile che determina il numero di post visualizzati di default. 
 
     ```javascript
     
@@ -163,11 +161,14 @@ la logica di questa web App riguarda fondamentalmente due componenti: **AppCard*
 
         }
         }
-    
+    ```
+    Successivamente, nei methods, si implementano due funzioni: una per determinare la condizione per non far visualizzare le card il cui indice è al di sopra del valore di default dichiarato in **maxVisiblePosts**  e una funzione toggle per mostrare o nascondare tutte le card ad ogni click. L'espressione  `this.showAllPosts = !this.showAllPosts;` ci permette di implementare una funzionalità tipica dei toggles all'interno di una direttiva **@click=""**
+
+    ```javascript
 
       /* metodo per determinare la condizione per far visualizzare di default solo i primi 4 posts */
         shouldHide(index) {
-            return !this.showAllPosts && index >= this.maxVisiblePosts;
+            return !this.showAllPosts && index >= this.maxVisiblePosts; 
         },
         /*  metodo per mostrare o nascondere tutti i posts */
         toggleAllPosts() {
