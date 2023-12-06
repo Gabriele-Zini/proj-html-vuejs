@@ -14,7 +14,7 @@ export default {
             buttonText: "View all courses",
             isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
             href: "",
-            
+
         }
     },
     components: {
@@ -28,14 +28,14 @@ export default {
     <main>
         <!-- about me section -->
         <div class="container-md">
-            <AppAboutMe :resultData="store.resultData"/>
+            <AppAboutMe :resultData="store.resultData" />
         </div>
         <!-- /about me section -->
 
         <!-- online courses section -->
         <section class="mt-5">
-            <h5 class="text-uppercase fs-6 text-center">begin your journey at maxcoach</h5>
-            <h2 class="text-center">Latest <span class="secondary-font-color">Online Courses</span> </h2>
+            <h5 class="text-uppercase text-center overtitle-primary-color fw-bold mb-4">begin your journey at maxcoach</h5>
+            <h2 class="text-center font-serif paragraph-color">Latest <span class="secondary-font-color">Online Courses</span> </h2>
             <div class="container-md pt-5">
                 <div class="row justify-content-between">
                     <AppCard :appCard="store.littleCard1" />
@@ -55,7 +55,7 @@ export default {
         <!-- /wingman book section -->
 
         <!--  client Logo -->
-        <section class="container-md my-5">
+        <section class="container-md p-0">
             <AppClientLogo :clientLogo="store.clientLogo" />
         </section>
         <!--  /client Logo -->
@@ -73,8 +73,9 @@ export default {
         <section>
             <div class="my-5">
                 <div class="container-md mb-5">
-                    <h5 class="text-uppercase fs-6 text-left mb-4">blog updated</h5>
-                    <h2 class="text-left fs-1">Intersting <span class="secondary-font-color">articles updated</span> daily</h2>
+                    <h5 class="text-uppercase text-left mb-4 overtitle-secondary-color fw-bold">blog updated</h5>
+                    <h2 class="text-left fs-1 font-serif">Intersting <span class="secondary-font-color">articles updated</span> daily
+                    </h2>
                 </div>
                 <div class="container-md">
                     <div class="row justify-content-between">
@@ -88,4 +89,8 @@ export default {
     </main>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+section {
+    padding: 2rem 0;
+}
+</style>

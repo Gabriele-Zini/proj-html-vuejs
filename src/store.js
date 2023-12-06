@@ -238,7 +238,7 @@ export const store = reactive({
   /*  RESULTS DATA */
   resultData: [
     {
-      rate: "1926",
+      rate: "1.926",
       category: "finished sessions",
     },
     {

@@ -56,7 +56,8 @@ export default {
         </div>
         <img :src="getImage(item.imgPath)" class="card-img-top " alt="...">
         <div class="card-body p-0 mt-4" :class="{ 'px-4': item.price }">
-            <p v-if="item.date"><i class="fa-regular fa-calendar me-2"></i>{{ item.date }}</p>
+            <p class="ms_paragraph-color" v-if="item.date"><i class="fa-regular fa-calendar me-2 overtitle"></i>{{ item.date
+            }}</p>
             <h5 class="card-title ms_title" v-if="item.title" :class="{ 'text-center ms_title-color': hasHover }">
                 {{ item.title }}
             </h5>
@@ -64,7 +65,7 @@ export default {
                 <span class="ms_price-before-decimal">{{ Math.floor(item.price) }}</span>
                 <span class="ms_price-after-decimal">.{{ (item.price % 1).toFixed(2).slice(2) }}</span>
             </div>
-            <p v-if="item.paragraph" class="card-text ms_paragraph">{{ getShortenedParagraph(item.paragraph) }}</p>
+            <p v-if="item.paragraph" class="card-text ms_paragraph" :class="{'ms_paragraph-color mt-4':item.date}">{{ getShortenedParagraph(item.paragraph) }}</p>
             <div v-if="item.numberLesson || item.numberStudent" class="d-flex justify-content-between">
                 <p><i class="fa-regular fa-file-lines me-2"></i> {{ item.numberLesson }} Lessons
                 </p>
@@ -85,18 +86,25 @@ export default {
 
 <style scoped lang="scss">
 @use '../style/partials/_variables.scss' as *;
+
 .ms_card-4 {
     width: calc(100% / 4 - 2rem);
     margin-bottom: 2.5rem;
     border: none;
 }
+
 .ms_title {
-        font-size:1.5rem;
-        font-weight: bold;
-    }
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
 .ms_title-color {
     color: $paragraph-color;
+}
+.ms_paragraph-color {
+    color: $overtitle-primary-color;
+    font-weight: bold;
+    font-size: .9rem;
 }
 
 .ms_card {
@@ -104,29 +112,31 @@ export default {
     border: 2px solid transparent;
     position: relative;
 
-    .ms_price-before-decimal {
-        font-weight: bold;
-        color: $secondary-font-color;
-        font-size: 2rem;
-    }
 
     .ms_paragraph {
-        font-size:1.5rem;
+        font-size: 1.5rem;
         font-weight: bold;
         color: $paragraph-color;
     }
 
+
+    .ms_price-before-decimal {
+        font-weight: bold;
+        color: $secondary-font-color;
+        font-size: 1.5rem;
+    }
+
     .ms_price-after-decimal {
-        font-size: 1.3rem;
-         color: $secondary-font-color;
-         font-weight: bold;
+        font-size: 1rem;
+        color: $secondary-font-color;
+        font-weight: bold;
     }
 
     .ms_hover {
         display: none;
     }
 
-   
+
 
     &:hover {
         transition: box-shadow 0.2s ease;
@@ -153,13 +163,17 @@ export default {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    &:hover {
+                        background-color: $button-hover;
+                        color: white;
+                    }
                 }
             }
         }
     }
-
-
 }
+
 
 .ms_all-posts-button {
     cursor: pointer;
@@ -169,7 +183,6 @@ export default {
     color: $secondary-font-color;
     font-weight: bold;
     border-bottom: 2px solid $secondary-font-color;
-    width:fit-content;
+    width: fit-content;
     margin: 0 auto;
-}
-</style>
+}</style>

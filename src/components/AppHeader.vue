@@ -42,7 +42,7 @@ export default {
                 <img src="../assets/img/dark-logo.png" alt="logo">
 
                 <!-- menu items list: tramite props si itera su un array di oggetti che contengono gli items del menù della navbar -->
-                <ul class="list-unstyled d-flex gap-5 m-0">
+                <ul class="list-unstyled d-flex gap-5 m-0 fw-bold">
                     <li v-for="item in menu" :key="item" class="d-flex gap-1">
                         <a :href="item.href">{{ item.text }}</a>
                         <a href=""><i class="fa-solid fa-angle-down"></i></a>
@@ -64,7 +64,7 @@ export default {
 
 
             <!-- hero -->
-            <div class="d-flex">
+            <div class="d-flex pt-5">
                 <div class="d-flex flex-column justify-content-center ms_hero">
                     <h5 class="text-uppercase ms_overtitle"> {{ hero.overtitle }}</h5>
                     <h2 class="text-capitalize font-serif">{{ hero.title }}</h2>
@@ -95,18 +95,18 @@ header {
             width: 180px;
         }
 
-        a {
-            text-decoration: none;
-            color: $secondary-header-color;
+        li {
+            font-size: .9rem;
+            a {
+                text-decoration: none;
+                color: $paragraph-color;
 
-            .fa-angle-down {
-                font-size: .7rem;
+                .fa-angle-down {
+                    font-size: .7rem;
+                    margin-left: .2rem;
+                }
             }
-        }
 
-        .fa-brands {
-            font-size: 1.2rem;
-            color: $primary-header-color;
         }
     }
 
@@ -120,7 +120,8 @@ header {
         .ms_overtitle {
             font-size: .8rem;
             font-weight: bold;
-            color: $primary-logos-color;
+            color: $overtitle-secondary-color;
+            letter-spacing: 1.5px;
         }
 
 

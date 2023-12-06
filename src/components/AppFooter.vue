@@ -40,11 +40,11 @@ export default {
                         <h4 class="text-white">Explore</h4>
                         <ul class="list-unstyled d-flex flex-column flex-wrap ms_list">
                             <li><a href="">Start Here</a></li>
-                            <li><a href="">Start Here</a></li>
-                            <li><a href="">Start Here</a></li>
-                            <li><a href="">Start Here</a></li>
-                            <li><a href="">Start Here</a></li>
-                            <li><a href="">Start Here</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">Success story</a></li>
+                            <li><a href="">Courses</a></li>
+                            <li><a href="">Contact us</a></li>
                         </ul>
                     </div>
                     <div>
@@ -61,7 +61,7 @@ export default {
 
 
             </div>
-            <p class="text-center mt-5"><span class="fs-4">&reg;</span> 2020 MaxCoach. All rights Reserved</p>
+            <p class="text-center ms_rights"><span class="fs-4">&reg;</span> 2020 MaxCoach. All rights Reserved</p>
         </div>
     </footer>
 </template>
@@ -89,21 +89,20 @@ footer {
     }
 
     .ms_list {
-        max-height: 190px;
-
-
-
-
-
+        max-height: 150px;
     }
 
     ul {
-        line-height: 3rem;
+        line-height: 2.5rem;
 
         a {
             
             text-decoration: none;
         }
+    }
+
+    .ms_rights {
+        margin-top: 100px;
     }
 
 

@@ -23,21 +23,21 @@ export default {
         <ul class="list-unstyled d-flex justify-content-center">
             <li v-for="result in resultData" class="d-flex justify-content-center flex-column align-items-center">
                 <p class="secondary-font-color">{{ result.rate }}</p>
-                <p class="text-uppercase">{{ result.category }}</p>
+                <p class="text-uppercase overtitle-secondary-color fw-bold">{{ result.category }}</p>
             </li>
 
         </ul>
 
         <div class="d-flex mb-5">
             <div>
-                <p class="text-uppercase mb-4 secondary-font-color fw-bold">about me</p>
-                <h3 class="fs-1">How to Be an Alpha Male: The 15 Habits of True Alphas</h3>
+                <p class="text-uppercase mb-4 secondary-font-color fw-bold ms_about-me letter-spacing">about me</p>
+                <h3 class="fs-1 font-serif">How to Be an Alpha Male: The 15 Habits of True Alphas</h3>
             </div>
             <div class="ms_alpha-male d-flex flex-column justify-content-center">
-                <h4 class="fs-5">Want to learn how to be <span>an alpha male</span>? How to be more masculine? How to be the
+                <h4 class="fs-6 fw-bold">Want to learn how to be <span class="secondary-font-color">an alpha male</span>? How to be more masculine? How to be the
                     man you've
                     always wanted to be?</h4>
-                <p class="mt-2">Your goal is to show the consistency of the business, core values and customer care.
+                <p class="mt-2 overtitle-primary-color fw-bold lh-lg">Your goal is to show the consistency of the business, core values and customer care.
                     Punctuality,
                     responasability, individuality, accuracy, enthusiasm- you have to clearly explain how these qualities
                     nare applicable to your work. And th important thing is you do love what you do.</p>
@@ -53,8 +53,8 @@ export default {
                     up
                     and chase them."</p>
                 <img :src="getImage('../assets/img/home-movation-shape-01.png')" alt="wingman" class="my-4">
-                <h3>Kaixa Stark</h3>
-                <p class="text-uppercase ms_little-p">wingman</p>
+                <h3 class="fs-4 fw-bold">Kaixa Stark</h3>
+                <p class="text-uppercase ms_little-p overtitle-secondary-color fw-bold">wingman</p>
             </div>
         </div>
     </div>
@@ -64,6 +64,7 @@ export default {
 @use '../style/partials/_variables.scss' as *;
 .ms_container-section {
     margin: 8rem 0;
+
 
     .ms_img-container {
         position: relative;

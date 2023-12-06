@@ -59,10 +59,10 @@ export default {
     <div v-for="(item, index) in bigCard" :class="{ 'd-none': currentIndex !== index }" class=" ms_big-card ">
         <div class="d-flex">
             <div class="d-flex flex-column justify-content-center w-50 align-items-center ms_paragraph">
-                <h5 class="text-uppercase"> {{ item.overtitle }}</h5>
-                <p class="my-5 font-serif">{{ item.paragraph }}</p>
-                <img class="ms_avatar mb-4" :src="getAvatar(item.avatar.imgPath)" alt="">
-                <p class="text-center">{{ item.avatar.name }}</p>
+                <h5 class="text-uppercase secondary-font-color fw-bold ms_overtitle"> {{ item.overtitle }}</h5>
+                <p class="my-2">{{ item.paragraph }}</p>
+                <img class="ms_avatar mb-2 mt-4" :src="getAvatar(item.avatar.imgPath)" alt="">
+                <p class="text-center m-0">{{ item.avatar.name }}</p>
                 <p class="fs-6">/ {{ item.avatar.job }}</p>
             </div>
             <img class="w-50 object-fit-contain" :src="getImage(item.imgPath)" alt="">
@@ -140,12 +140,16 @@ export default {
     }
 
     .ms_paragraph {
-        margin:0 10rem;
+        margin: 0 10rem;
         text-align: center;
         line-height: 2.4rem;
-        font-size: 1.4rem;
-        font-family: $font-serif;
-       
+        font-size: 1.2rem;
+
+    }
+
+    .ms_overtitle {
+        font-size: .9rem;
+        letter-spacing: 1.5px;
     }
 
 }
