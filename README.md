@@ -17,7 +17,7 @@ Il numero totale dei componenti è **10**:
 
 
 1. ### AppHeader.vue:
-   Il componente AppHeader comprende la navbar che contiene il logo e gli elementi del menu. La sezione hero è anche inclusa nella parte superiore dell'header. Il componente utilizza props per ricevere dati dinamici come il menu e i dettagli hero dallo store.
+   Il componente AppHeader comprende la navbar che contiene il logo e gli elementi del menu. La sezione hero è inclusa nella parte superiore dell'header. Il componente utilizza props per ricevere dati dinamici come il menu e i dettagli hero dallo store.
 
 2. ### AppMain.vue:
    Il componente `AppMain` rappresenta il corpo centrale dell'applicazione. Questo è il luogo dove verrà visualizzato il suo contenuto principale, diviso in  **sei sezioni**.
