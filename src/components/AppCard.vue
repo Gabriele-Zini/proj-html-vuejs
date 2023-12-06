@@ -12,6 +12,7 @@ export default {
     props: {
         appCard: Object,
         hasButton: Boolean, /* valore booleano per gestire la presenza o meno del bottone toggleAllPosts nelle card */
+        hasHover: Boolean,
 
     },
     methods: {
@@ -47,13 +48,19 @@ export default {
     <!-- card -->
     <div v-for="(item, index) in appCard" :key="index" class="card col-3 p-0 ms_card-4"
         :class="{ 'ms_card col-md-4': item.price, 'd-none': item.title && shouldHide(item, index) }">
+        <div v-if="hasHover" class="ms_hover flex-column gap-3">
+            <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href=""><i class="fa-regular fa-heart"></i></a>
+            <a href=""><i class="fa-solid fa-signal"></i></a>
+        </div>
         <img :src="getImage(item.imgPath)" class="card-img-top " alt="...">
         <div class="card-body p-0 mt-4" :class="{ 'px-4': item.price }">
             <p v-if="item.date"><i class="fa-regular fa-calendar me-2"></i>{{ item.date }}</p>
-            <h5 class="card-title" v-if="item.title">
+            <h5 class="card-title" v-if="item.title" :class="{ 'text-center ': hasHover }">
                 {{ item.title }}
             </h5>
-            <div v-if="item.price">
+            <div v-if="item.price" :class="{ 'text-center mb-5': hasHover }">
                 <span class="ms_price-before-decimal">{{ item.price.toFixed(0) }}</span>
                 <span class="ms_price-after-decimal">{{ (item.price % 1).toFixed(2).substring(1) }}</span>
             </div>
@@ -86,6 +93,7 @@ export default {
 .ms_card {
     width: calc(100% / 3 - 2rem);
     border: 2px solid transparent;
+    position: relative;
 
     .ms_price-before-decimal {
         font-weight: bold;
@@ -94,6 +102,42 @@ export default {
     .ms_price-after-decimal {
         font-size: 0.8em;
     }
+
+    .ms_hover {
+        display: none;
+    }
+
+    &:hover {
+        transition: box-shadow 0.2s ease;
+        box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.060);
+
+        .ms_hover {
+            position: absolute;
+            top: 20%;
+            right: 20%;
+            display: flex;
+            transition: filter 0.3s ease;
+
+            a {
+                color: black;
+                text-decoration: none;
+
+                i {
+                    height: 40px;
+                    width: 40px;
+                    background-color: white;
+                    display: inline-block;
+                    border-radius: 50%;
+                    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.241);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+
 }
 
 .ms_all-posts-button {

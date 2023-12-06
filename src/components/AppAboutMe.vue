@@ -8,7 +8,7 @@ export default {
     },
     methods: {
         getImage(imgPath) {
-            return new URL(`../assets/img/home-movation-${imgPath}`, import.meta.url).href;
+            return new URL(`${imgPath}`, import.meta.url).href;
         },
     },
     props: {
@@ -44,12 +44,15 @@ export default {
             </div>
         </div>
         <div class="d-flex">
-            <img :src="getImage('video-poster-670x450.jpg')" alt="">
+            <div class="w-100 ms_img-container">
+                <img :src="getImage('../assets/img/icon-youtube-play.png')" alt="" class="ms_youtube">
+                <img :src="getImage('../assets/img/home-movation-video-poster-670x450.jpg')" alt="">
+            </div>
             <div class="d-flex flex-column align-items-start ms_paragraph-container justify-content-center">
                 <p class="fs-3 ms_paragraph">"Every moring you have two choices: continue to sleep with your dreams, or wake
                     up
                     and chase them."</p>
-                <img :src="getImage('shape-01.png')" alt="wingman" class="my-4">
+                <img :src="getImage('../assets/img/home-movation-shape-01.png')" alt="wingman" class="my-4">
                 <h3>Kaixa Stark</h3>
                 <p class="text-uppercase ms_little-p">wingman</p>
             </div>
@@ -60,6 +63,21 @@ export default {
 <style lang="scss" scoped>
 .ms_container-section {
     margin: 8rem 0;
+
+    .ms_img-container {
+        position: relative;
+        .ms_youtube {
+            position: absolute;
+            width: 80px;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+        img {
+            border-radius: 5px;
+            width: 100%;
+        }
+    }
 
     ul {
         margin-bottom: 5rem;

@@ -2,19 +2,21 @@
 import AppBigCard from './AppBigCard.vue'
 import { store } from '../store.js'
 import AppButton from './AppButton.vue';
+import AppSocialLogos from './AppSocialLogos.vue';
 export default {
     data() {
         return {
             store,
             buttonText: "get started for free", //contenuto del button
             isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
-            href:"",
+            hasPrimary:true,
+            href:"", //href del button
 
 
         }
     },
     components: {
-        AppBigCard, AppButton,
+        AppBigCard, AppButton, AppSocialLogos
     },
     props: {
         menu: Object,
@@ -46,12 +48,7 @@ export default {
                 <!-- /menu items list -->
 
                 <!-- social logo link list -->
-                <ul class="list-unstyled d-flex gap-4 my-0">
-                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-                </ul>
+                <AppSocialLogos :hasPrimary="hasPrimary" />
                 <!-- /social logo link list -->
 
 

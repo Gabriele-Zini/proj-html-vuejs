@@ -6,7 +6,9 @@ export default {
     data() {
         return {
             appCard: store.bookStore,
-            buttonText: "get free ebook"
+            buttonText: "get free ebook",
+            hasHover:true,
+
         }
     },
     components: {
@@ -31,7 +33,7 @@ export default {
                 </ul>
                 <AppButton :buttonText="buttonText" />
             </div>
-            <AppCard :appCard="appCard" />
+            <AppCard :appCard="appCard" :hasHover="hasHover" />
         </div>
 
 
