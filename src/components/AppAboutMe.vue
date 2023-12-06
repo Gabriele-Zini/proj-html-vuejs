@@ -34,7 +34,7 @@ export default {
                 <h3 class="fs-1 font-serif">How to Be an Alpha Male: The 15 Habits of True Alphas</h3>
             </div>
             <div class="ms_alpha-male d-flex flex-column justify-content-center">
-                <h4 class="fs-6 fw-bold">Want to learn how to be <span class="secondary-font-color">an alpha male</span>? How to be more masculine? How to be the
+                <h4 class="fs-6 fw-bold third-font-color">Want to learn how to be <span class="secondary-font-color">an alpha male</span>? How to be more masculine? How to be the
                     man you've
                     always wanted to be?</h4>
                 <p class="mt-2 overtitle-primary-color fw-bold lh-lg">Your goal is to show the consistency of the business, core values and customer care.
@@ -49,7 +49,7 @@ export default {
                 <img :src="getImage('../assets/img/home-movation-video-poster-670x450.jpg')" alt="">
             </div>
             <div class="d-flex flex-column align-items-start ms_paragraph-container justify-content-center">
-                <p class="fs-3 ms_paragraph">"Every moring you have two choices: continue to sleep with your dreams, or wake
+                <p class="fs-3 ms_paragraph third-font-color">"Every moring you have two choices: continue to sleep with your dreams, or wake
                     up
                     and chase them."</p>
                 <img :src="getImage('../assets/img/home-movation-shape-01.png')" alt="wingman" class="my-4">

@@ -21,7 +21,7 @@ export default {
 <template>
     <AppHeader :menu="store.menu" :hero="store.hero" />
     <AppMain />
-    <AppFooter />
+    <AppFooter :menu="store.footerMenu"/>
 </template>
 
 <style lang="scss">

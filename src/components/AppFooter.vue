@@ -1,8 +1,10 @@
 <script>
 import AppSocialLogos from './AppSocialLogos.vue';
+import { store } from '../store'
 export default {
     data() {
         return {
+            store,
             style: {
                 fontSize: "1.5rem",
             },
@@ -11,6 +13,9 @@ export default {
     components: {
         AppSocialLogos,
     },
+    props: {
+        menu: Object,
+    }
 
 
 }
@@ -31,29 +36,22 @@ export default {
                         <p>382 NE 191st Miami, (9am-17pm)</p>
                         <p>support@maxcoach.com</p>
                     </div>
-                    <AppSocialLogos :style="style" :hasPrimary="hasPrimary" />
+                    <AppSocialLogos :style="style" />
                 </div>
 
 
                 <div class="d-flex gap-5">
                     <div>
                         <h4 class="text-white fw-bold">Explore</h4>
-                        <ul class="list-unstyled d-flex flex-column flex-wrap ms_list">
-                            <li><a href="">Start Here</a></li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="">About us</a></li>
-                            <li><a href="">Success story</a></li>
-                            <li><a href="">Courses</a></li>
-                            <li><a href="">Contact us</a></li>
+                        <ul class="list-unstyled d-flex flex-column flex-wrap ms_list" v-for="item in menu.explore">
+                            <li><a :href="item.href">{{ item.text }}</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-white fw-bold">Information</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="">Membership</a></li>
-                            <li><a href="">Purchase Guide</a></li>
-                            <li><a href="">rivacy Policy</a></li>
-                            <li><a href="">Start here</a></li>
+                        <ul class="list-unstyled" v-for="item in menu.information">
+                            <li><a :href="item.href">{{ item.text }}</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -96,7 +94,7 @@ footer {
         line-height: 2.5rem;
 
         a {
-            
+
             text-decoration: none;
         }
     }

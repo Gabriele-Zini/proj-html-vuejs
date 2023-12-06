@@ -1,7 +1,7 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-  /* menu items */
+  /* HEADER MENU ITEMS */
   menu: [
     {
       text: "Home",
@@ -28,6 +28,57 @@ export const store = reactive({
       href: "",
     },
   ],
+  /* /HEADER MENU ITEMS */
+
+  /* FOOTER MENU ITEMS */
+  footerMenu: {
+    explore: [
+      {
+        text: "Start Here",
+        href: "",
+      },
+      {
+        text: "Blog",
+        href: "",
+      },
+      {
+        text: "About us",
+        href: "",
+      },
+      {
+        text: "Success Story",
+        href: "",
+      },
+      {
+        text: "Courses",
+        href: "",
+      },
+      {
+        text: "Contact us",
+        href: "",
+      },
+    ],
+
+    information: [
+      {
+        text: "Membership",
+        href: "",
+      },
+      {
+        text: "Purchase guide",
+        href: "",
+      },
+      {
+        text: "Privacy policy",
+        href: "",
+      },
+      {
+        text: "Start Here",
+        href: "",
+      },
+    ],
+  },
+  /* /FOOTER MENU ITEMS */
 
   /* hero data */
   hero: {
