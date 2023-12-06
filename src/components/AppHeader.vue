@@ -9,8 +9,8 @@ export default {
             store,
             buttonText: "get started for free", //contenuto del button
             isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
-            hasPrimary:true,
-            href:"", //href del button
+            hasPrimary: true,
+            href: "", //href del button
             style: {
                 fontSize: "1.2rem",
             },
@@ -66,9 +66,9 @@ export default {
             <!-- hero -->
             <div class="d-flex">
                 <div class="d-flex flex-column justify-content-center ms_hero">
-                    <h5 class="text-uppercase"> {{ hero.overtitle }}</h5>
-                    <h2 class="text-capitalize">{{ hero.title }}</h2>
-                    <p>{{ hero.paragraph }}</p>
+                    <h5 class="text-uppercase ms_overtitle"> {{ hero.overtitle }}</h5>
+                    <h2 class="text-capitalize font-serif">{{ hero.title }}</h2>
+                    <p class="w-75 mb-4">{{ hero.paragraph }}</p>
                     <AppButton :isArrow="isArrow" :buttonText="buttonText" :href="href" />
                 </div>
                 <img :src="getImage(hero.imgPath)" alt="">
@@ -116,6 +116,12 @@ header {
         text-align: left;
         line-height: 2rem;
         padding-right: 5rem;
+
+        .ms_overtitle {
+            font-size: .8rem;
+            font-weight: bold;
+            color: $primary-logos-color;
+        }
 
 
         img {

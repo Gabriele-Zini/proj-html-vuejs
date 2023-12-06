@@ -22,7 +22,7 @@ export default {
 
         <ul class="list-unstyled d-flex justify-content-center">
             <li v-for="result in resultData" class="d-flex justify-content-center flex-column align-items-center">
-                <p>{{ result.rate }}</p>
+                <p class="secondary-font-color">{{ result.rate }}</p>
                 <p class="text-uppercase">{{ result.category }}</p>
             </li>
 
@@ -30,7 +30,7 @@ export default {
 
         <div class="d-flex mb-5">
             <div>
-                <p class="text-uppercase mb-4">about me</p>
+                <p class="text-uppercase mb-4 secondary-font-color fw-bold">about me</p>
                 <h3 class="fs-1">How to Be an Alpha Male: The 15 Habits of True Alphas</h3>
             </div>
             <div class="ms_alpha-male d-flex flex-column justify-content-center">
@@ -61,6 +61,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../style/partials/_variables.scss' as *;
 .ms_container-section {
     margin: 8rem 0;
 
@@ -83,13 +84,13 @@ export default {
         margin-bottom: 5rem;
 
         li {
-            border-left: 2px dotted gray;
+            border-left: 3px dotted $ms-light-gray;
             padding: 0 2rem;
             width: calc(100% / 4);
         }
 
         li:last-child {
-            border-right: 2px dotted gray;
+            border-right: 3px dotted $ms-light-gray;
         }
 
         p:first-of-type {

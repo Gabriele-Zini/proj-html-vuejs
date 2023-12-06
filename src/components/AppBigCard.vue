@@ -60,7 +60,7 @@ export default {
         <div class="d-flex">
             <div class="d-flex flex-column justify-content-center w-50 align-items-center ms_paragraph">
                 <h5 class="text-uppercase"> {{ item.overtitle }}</h5>
-                <p class="my-5">{{ item.paragraph }}</p>
+                <p class="my-5 font-serif">{{ item.paragraph }}</p>
                 <img class="ms_avatar mb-4" :src="getAvatar(item.avatar.imgPath)" alt="">
                 <p class="text-center">{{ item.avatar.name }}</p>
                 <p class="fs-6">/ {{ item.avatar.job }}</p>
@@ -144,6 +144,7 @@ export default {
         text-align: center;
         line-height: 2.4rem;
         font-size: 1.4rem;
+        font-family: $font-serif;
        
     }
 

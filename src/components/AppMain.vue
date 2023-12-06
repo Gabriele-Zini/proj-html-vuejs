@@ -35,7 +35,7 @@ export default {
         <!-- online courses section -->
         <section class="mt-5">
             <h5 class="text-uppercase fs-6 text-center">begin your journey at maxcoach</h5>
-            <h2 class="text-center">Latest <span>Online Courses</span> </h2>
+            <h2 class="text-center">Latest <span class="secondary-font-color">Online Courses</span> </h2>
             <div class="container-md pt-5">
                 <div class="row justify-content-between">
                     <AppCard :appCard="store.littleCard1" />
@@ -74,7 +74,7 @@ export default {
             <div class="my-5">
                 <div class="container-md mb-5">
                     <h5 class="text-uppercase fs-6 text-left mb-4">blog updated</h5>
-                    <h2 class="text-left">Intersting <span>articles updated</span> daily</h2>
+                    <h2 class="text-left fs-1">Intersting <span class="secondary-font-color">articles updated</span> daily</h2>
                 </div>
                 <div class="container-md">
                     <div class="row justify-content-between">

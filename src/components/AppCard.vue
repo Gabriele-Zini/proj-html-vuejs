@@ -162,10 +162,14 @@ export default {
 }
 
 .ms_all-posts-button {
-    text-decoration: underline;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
     margin: 2rem 0;
+    color: $secondary-font-color;
+    font-weight: bold;
+    border-bottom: 2px solid $secondary-font-color;
+    width:fit-content;
+    margin: 0 auto;
 }
 </style>
