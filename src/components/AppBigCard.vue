@@ -67,7 +67,7 @@ export default {
             </div>
             <img class="w-50 object-fit-contain" :src="getImage(item.imgPath)" alt="">
             <div class="ms_next-prev-btn"><span @click="prevButton()" class="ms_prev-button"></span>{{ item.id }} / {{ idArray.length }}
-                <span @click="nextButton" class="ms_next-button"></span>
+                <span @click="nextButton()" class="ms_next-button"></span>
             </div>
         </div>
     </div>
@@ -100,7 +100,7 @@ export default {
         text-align: center;
         line-height: 100px;
         font-weight: bold;
-        top: 50%;
+        top: 40%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -144,6 +144,7 @@ export default {
         text-align: center;
         line-height: 2.4rem;
         font-size: 1.2rem;
+        
 
     }
 
