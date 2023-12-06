@@ -9,15 +9,21 @@ Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazion
    Il componente AppHeader comprende la navbar che contiene il logo e gli elementi del menu. La sezione hero è anche inclusa nella parte superiore dell'header. Il componente utilizza props per ricevere dati dinamici come il menu e i dettagli hero dallo store.
 
 2. ### AppMain.vue:
-   Il componente `AppMain` rappresenta il corpo centrale dell'applicazione. Questo è il luogo dove verrà visualizzato il suo contenuto principale, diviso in sezioni.
+   Il componente `AppMain` rappresenta il corpo centrale dell'applicazione. Questo è il luogo dove verrà visualizzato il suo contenuto principale, diviso in  **sei sezioni**.
+   - **about me section**
+   - **online courses section**
+   - **wingman book section**
+   - **client Logo**
+   - **real stories section**
+   - **blog section**
 
 3. ### AppFooter.vue
-   Il componente `AppFooter` rappresenta footer dell'applicazione. Come l'header, il footer utilizza i props per ricevere i contenuti del menu archiviati nello `store.js`.
+   Il componente `AppFooter` rappresenta il footer dell'applicazione. Come l'header, il footer utilizza  props per ricevere i contenuti del menu archiviati nello `store.js`.
 
-4. ### Componenti riutilizzati
-   I componenti riutilizzati sono AppCard e AppButton e sono stati pensati per essere il più neutri possibili ai fini della riutilizzazione.
+4. ### Componenti riutilizzabili
+   I componenti riutilizzabili sono AppCard e AppButton e sono stati pensati per essere il più neutri possibili ai fini della riutilizzazione.
    - #### AppCard: 
-        AppCard è stato riutilizzata in tre contesti di questa Vue app: nella `blog section`, nella `online courses section` e come sotto componente di `AppBook.vue`. Le criticità di poter adattare questo componente sono state risolte utilizzando, a seconda dei contesti e degli elementi dinamici della card, tre diverse soluzioni: <br>
+        AppCard è stato riutilizzata in tre contesti di questa Vue app: nella `blog section`, nella `online courses section` e come sotto componente di `AppBook.vue` all'interno della **wingman book section** . Le criticità di poter adattare questo componente sono state risolte utilizzando, a seconda dei contesti e degli elementi dinamici della card, tre diverse soluzioni: <br>
           1. **classi dinamiche** con il v-bind `:class=""` per applicare dinamicamente gli stili. <br>
           2. **con la direttiva `v-if`** per settare la condizione dell'elemento del template nel caso in cui esista (o meno) quell'elemento nella struttura dati richiamata. <br>
           3. **con una `props` booleana**. <br>
@@ -97,6 +103,8 @@ Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazion
 ## Store
 Utilizziamo `reactive` come gestore dello stato dell'applicazione. La politica di storage dei dati globali è volta ad inserire nello store, oltre ai menu del footer e dell'header, solo i dati da stampare in pagina che, presumibilmente, saranno ottenuti con una richiesta al server. Ai fini della presentazione di questa Vue app i dati da stampare sono stati inseriti manualmente nello store e richiamati dai varii componenti tramite props da passare al componente genitore.
 
+
+## Metodi e Logica
 
 ## Stili
 Per quanto riguarda gli stili, stiamo utilizzando SCSS per mantenere il nostro codice CSS organizzato. Inoltre, abbiamo integrato Bootstrap versione 5.3.2 nel nostro progetto per sfruttare i componenti e gli stili predefiniti forniti dal framework.
