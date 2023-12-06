@@ -23,10 +23,10 @@ Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazion
 4. ### Componenti riutilizzabili
    I componenti riutilizzabili sono AppCard e AppButton e sono stati pensati per essere il più neutri possibili ai fini della riutilizzazione.
    - #### AppCard: 
-        AppCard è stato riutilizzata in tre contesti di questa Vue app: nella `blog section`, nella `online courses section` e come sotto componente di `AppBook.vue` all'interno della **wingman book section** . Le criticità di poter adattare questo componente sono state risolte utilizzando, a seconda dei contesti e degli elementi dinamici della card, tre diverse soluzioni: <br>
+        AppCard è stato riutilizzata in tre contesti di questa Vue app: nella `blog section`, nella `online courses section` e come sotto componente di `AppBook.vue` all'interno della **wingman book section** . `AppCard` utilizza la prop **AppCard** per comunicare con il component genitore i dati da stampare all'interno del `<template>` Le criticità di poter adattare questo componente sono state risolte utilizzando, a seconda dei contesti e degli elementi dinamici della card, tre diverse soluzioni: <br>
           1. **classi dinamiche** con il v-bind `:class=""` per applicare dinamicamente gli stili. <br>
-          2. **con la direttiva `v-if`** per settare la condizione dell'elemento del template nel caso in cui esista (o meno) quell'elemento nella struttura dati richiamata. <br>
-          3. **con una `props` booleana**. <br>
+          2. **con la direttiva `v-if`** per settare la condizione di esistenza dell'elemento del template nel caso in cui esista (o meno) quell'elemento nella struttura dati richiamata. <br>
+          3. **con una `props` booleana** (per esempio `hasButton`, funzionale ad inserire o meno un button, diverso da `AppButton`, che mostri o nasconda le card). <br>
    
 
 ```javascript
@@ -95,9 +95,9 @@ Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazion
 ```
 - #### AppButton:
     Il secondo elemento riutilizzabile è un `AppButton`. La riutilizzabilità è facilitata da tre `props`: 
-    - buttonText per rendere dinamico e flessibile il testo del button, 
-    -  href, nel caso in cui il button serva per accedere ad un altra area della applicazione web.
-    -  isArrow, una props booleana per inserire o meno una freccia, con l'icona di fontawesome, all'interno del corpo del bottone.
+    - **buttonText** per rendere dinamico e flessibile il testo del button, 
+    -  **href**, nel caso in cui il button serva per accedere ad un altra area della applicazione web.
+    -  **isArrow**, una props booleana per inserire o meno una freccia, con l'icona di fontawesome, all'interno del corpo del bottone.
    
 
 ## Store
