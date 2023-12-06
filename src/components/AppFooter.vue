@@ -79,6 +79,7 @@ footer {
 
         a {
             color: $primary-footer-color;
+
         }
     }
 
@@ -96,6 +97,10 @@ footer {
         a {
 
             text-decoration: none;
+
+            &:hover {
+                color: white;
+            }
         }
     }
 
