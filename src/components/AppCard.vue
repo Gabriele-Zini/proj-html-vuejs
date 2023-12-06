@@ -4,8 +4,8 @@ export default {
     data() {
         return {
             store,
-            showAllPosts: false,
-            maxVisiblePosts: 4,
+            showAllPosts: false, // Variabile booleana per gestire la visualizzazione di tutti i post
+            maxVisiblePosts: 4, // Numero massimo di post visibili di default
 
         }
     },
@@ -45,43 +45,63 @@ export default {
 </script>
 
 <template>
-    <!-- card -->
     <div v-for="(item, index) in appCard" :key="index" class="card col-3 p-0 ms_card-4"
         :class="{ 'ms_card col-md-4': item.price, 'd-none': item.title && shouldHide(item, index) }">
+
+        <!-- Effetto hover con icone -->
         <div v-if="hasHover" class="ms_hover flex-column gap-3">
             <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
             <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
             <a href=""><i class="fa-regular fa-heart"></i></a>
             <a href=""><i class="fa-solid fa-signal"></i></a>
         </div>
+
+        <!-- Immagine della card -->
         <img :src="getImage(item.imgPath)" class="card-img-top " alt="...">
+
+        <!-- Contenuto della card -->
         <div class="card-body p-0 mt-4" :class="{ 'px-4': item.price }">
-            <p class="ms_paragraph-color" v-if="item.date"><i class="fa-regular fa-calendar me-2 overtitle"></i>{{ item.date
-            }}</p>
+            <!-- Data della card -->
+            <p class="ms_paragraph-color" v-if="item.date">
+                <i class="fa-regular fa-calendar me-2 overtitle"></i>{{ item.date }}
+            </p>
+
+            <!-- Titolo della card -->
             <h5 class="card-title ms_title" v-if="item.title" :class="{ 'text-center ms_title-color': hasHover }">
                 {{ item.title }}
             </h5>
+
+            <!-- Prezzo della card -->
             <div v-if="item.price" :class="{ 'text-center mb-5': hasHover }">
                 <span class="ms_price-before-decimal">{{ Math.floor(item.price) }}</span>
-                <span class="ms_price-after-decimal">.{{ (item.price % 1).toFixed(2).slice(2) }}</span>
+                <span class="ms_price-after-decimal">
+                    .{{ (item.price % 1).toFixed(2).slice(2) }}
+                </span>
             </div>
-            <p v-if="item.paragraph" class="card-text ms_paragraph" :class="{'ms_paragraph-color mt-4':item.date}">{{ getShortenedParagraph(item.paragraph) }}</p>
-            <div v-if="item.numberLesson || item.numberStudent" class="d-flex justify-content-between">
-                <p><i class="fa-regular fa-file-lines me-2"></i> {{ item.numberLesson }} Lessons
-                </p>
+
+            <!-- Paragrafo della card -->
+            <p v-if="item.paragraph" class="card-text ms_paragraph"
+                :class="{'ms_paragraph-color mt-4': item.date}">
+                {{ getShortenedParagraph(item.paragraph) }}
+            </p>
+
+            <!-- Informazioni aggiuntive sulla card -->
+            <div v-if="item.numberLesson && item.numberStudent" class="d-flex justify-content-between">
+                <p><i class="fa-regular fa-file-lines me-2"></i> {{ item.numberLesson }} Lessons</p>
                 <p><i class="fa-regular fa-user me-2"></i> {{ item.numberStudent }} Students</p>
             </div>
         </div>
     </div>
-    <!-- /card -->
 
-    <!-- show more posts button with a boolean prop -->
+    <!-- Bottone per mostrare/nascondere tutti i post: possiamo decidere se utilizzarlo o meno con la prop booleana hasButton -->
     <div v-if="hasButton">
-        <div v-if="!showAllPosts" @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">view all posts
+        <div v-if="!showAllPosts" @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">
+            view all posts
         </div>
-        <div v-else @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">less posts</div>
+        <div v-else @click="toggleAllPosts(index)" class="ms_all-posts-button" href="">
+            less posts
+        </div>
     </div>
-    <!-- /show more posts button with a boolean prop -->
 </template>
 
 <style scoped lang="scss">
