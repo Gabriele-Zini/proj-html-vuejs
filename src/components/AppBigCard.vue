@@ -66,7 +66,7 @@ export default {
                 <p class="fs-6">/ {{ item.avatar.job }}</p>
             </div>
             <img class="w-50 object-fit-contain" :src="getImage(item.imgPath)" alt="">
-            <div class="ms_next-prev-btn"><span @click="prevButton()" class="ms_prev-button"></span>{{ item.id }} / 4
+            <div class="ms_next-prev-btn"><span @click="prevButton()" class="ms_prev-button"></span>{{ item.id }} / {{ idArray.length }}
                 <span @click="nextButton" class="ms_next-button"></span>
             </div>
         </div>

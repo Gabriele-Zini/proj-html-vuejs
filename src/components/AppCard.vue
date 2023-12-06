@@ -31,12 +31,11 @@ export default {
         },
 
         /* metodo per determinare la condizione per far visualizzare di default solo i primi 4 posts */
-        shouldHide(item, index) {
-            return !this.showAllPosts && item.title && index >= this.maxVisiblePosts;
+        shouldHide(index) {
+            return !this.showAllPosts && index >= this.maxVisiblePosts;
         },
         /*  metodo per mostrare o nascondere tutti i posts */
         toggleAllPosts() {
-            this.maxVisiblePosts = this.showAllPosts ? 4 : this.store.littleCard2.length;
             this.showAllPosts = !this.showAllPosts;
         },
     }
@@ -46,7 +45,7 @@ export default {
 
 <template>
     <div v-for="(item, index) in appCard" :key="index" class="card col-3 p-0 ms_card-4"
-        :class="{ 'ms_card col-md-4': item.price, 'd-none': item.title && shouldHide(item, index) }">
+        :class="{ 'ms_card col-md-4': item.price, 'd-none': item.title && shouldHide(index) }">
 
         <!-- Effetto hover con icone -->
         <div v-if="hasHover" class="ms_hover flex-column gap-3">

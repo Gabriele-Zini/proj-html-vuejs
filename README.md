@@ -1,6 +1,6 @@
 # Applicazione MaxCoach Vue.js
 
-Il file principale è `App.vue` per la nostra applicazione Vue.js. L'applicazione è organizzata in tre componenti principali: l'header, il main e il footer. Utilizziamo anche `reactive` per la gestione dello stato attraverso il nostro store.
+Il file principale è **`App.vue`** per la nostra applicazione Vue.js. L'applicazione è organizzata in tre componenti principali: l'header, il main e il footer. Utilizziamo anche `reactive` per la gestione dello stato attraverso il nostro store.
 
 ## Struttura dei Componenti Principali
 
@@ -105,6 +105,78 @@ Utilizziamo `reactive` come gestore dello stato dell'applicazione. La politica d
 
 
 ## Metodi e Logica
+
+la logica di questa web App riguarda fondamentalmente due componenti: **AppCard** e **AppBigCard**.
+1. in **AppBigCard** la logica è implementata per far scorrere gli avatar in avanti e indieto, stile carosello.  Nei data sono dichiarate le variabili currentIndex inizializzato a 0 e idArray inizializzato come un array vuoto. Appena caricata l'applicazione si inizializza l'array degli **id** degli avatar.
+   <br>
+   
+   ```javascript
+    data() {
+            return {
+                store,
+                currentIndex: 0,
+                idArray: [],
+            }
+        },
+    //
+        mounted() {
+            // Inizializza l'array degli ID una volta montato il componente
+            return this.idArray = this.store.bigCardData.map(obj => obj.id);
+        },
+    ```
+
+    nei methods poi si implementano `prevButton` e `nextButton` in questo modo: nel **prevButton** se il currentIndex è maggiore di zero si decrementa al click altrimeni, una volta raggiunto lo 0, si risetta currentIndex alla lunghezza dell'array di Id. La logica è speculare per **nextButton**
+    <br>
+    ```javascript
+    prevButton() {
+            if (this.currentIndex > 0) {
+                this.currentIndex--
+            } else {
+                // Se l'indice corrente è il primo, vai all'ultimo
+                this.currentIndex = this.idArray.length - 1
+            }
+
+        },
+        nextButton() {
+            if (this.currentIndex < this.idArray.length - 1) {
+                this.currentIndex++
+            } else {
+                // Se l'indice corrente è l'ultimo, vai al primo
+                this.currentIndex = 0
+            }
+         }
+    ```
+   
+
+ 2. in **AppCard** la logica è implementata per mostrare tutte le card o nascondere quelle al di sopra del numero di default.
+   Si dichiara nei data due variabili, una variabile booleana per controllare la stampa di tutte le card e una variabile che determina il numero di post visualizzati di default:
+   <br>
+
+    ```javascript
+     data() {
+        return {
+            store,
+            showAllPosts: false, // Variabile booleana per gestire la visualizzazione di tutti i post
+            maxVisiblePosts: 4, // Numero massimo di post visibili di default
+
+        }
+        }
+    ```
+
+    successivamente, nei methods, si implementano due funzioni: una per determinare la condizione per far non far visualizzare le card il cui indice è al di sopra del valore di default dichiarato in **maxVisiblePosts**  e una funzione toggle per mostrare o nascondare tutte le card ad ogni click. L'espressione  `this.showAllPosts = !this.showAllPosts;` ci permette di implementare una funzionalità tipica dei toggles all'interno di una direttiva **`@click=""`**
+    <br>
+
+    ```javascript
+      /* metodo per determinare la condizione per far visualizzare di default solo i primi 4 posts */
+        shouldHide(index) {
+            return !this.showAllPosts && index >= this.maxVisiblePosts;
+        },
+        /*  metodo per mostrare o nascondere tutti i posts */
+        toggleAllPosts() {
+            this.showAllPosts = !this.showAllPosts;
+        },
+    ```
+
 
 ## Stili
 Per quanto riguarda gli stili, stiamo utilizzando SCSS per mantenere il nostro codice CSS organizzato. Inoltre, abbiamo integrato Bootstrap versione 5.3.2 nel nostro progetto per sfruttare i componenti e gli stili predefiniti forniti dal framework.
