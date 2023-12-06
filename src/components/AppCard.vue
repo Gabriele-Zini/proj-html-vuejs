@@ -22,7 +22,7 @@ export default {
 
         /*  metodo per formattare il paragrafo e visualizzare massimo i primi 49 caratteri */
         getShortenedParagraph(paragraph) {
-            const maxLength = 49;
+            const maxLength = 60;
             if (paragraph.length <= maxLength) {
                 return paragraph;
             } else {
@@ -94,7 +94,7 @@ export default {
 }
 
 .ms_title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
@@ -114,7 +114,7 @@ export default {
 
 
     .ms_paragraph {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         font-weight: bold;
         color: $paragraph-color;
     }

@@ -74,7 +74,7 @@ export default {
             <div class="my-5">
                 <div class="container-md mb-5">
                     <h5 class="text-uppercase text-left mb-4 overtitle-secondary-color fw-bold">blog updated</h5>
-                    <h2 class="text-left fs-1 font-serif">Intersting <span class="secondary-font-color">articles updated</span> daily
+                    <h2 class="text-left font-serif">Intersting <span class="secondary-font-color">articles updated</span> daily
                     </h2>
                 </div>
                 <div class="container-md">

@@ -26,7 +26,7 @@ export default {
 
                 <div class="d-flex flex-column">
                     <div>
-                        <h4 class="text-white ms-0 mb-4">Address</h4>
+                        <h4 class="text-white ms-0 mb-4 fw-bold">Address</h4>
                         <p>382 NE 191st Miami, FL 67859-99324</p>
                         <p>382 NE 191st Miami, (9am-17pm)</p>
                         <p>support@maxcoach.com</p>
@@ -37,7 +37,7 @@ export default {
 
                 <div class="d-flex gap-5">
                     <div>
-                        <h4 class="text-white">Explore</h4>
+                        <h4 class="text-white fw-bold">Explore</h4>
                         <ul class="list-unstyled d-flex flex-column flex-wrap ms_list">
                             <li><a href="">Start Here</a></li>
                             <li><a href="">Blog</a></li>
@@ -48,7 +48,7 @@ export default {
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-white">Information</h4>
+                        <h4 class="text-white fw-bold">Information</h4>
                         <ul class="list-unstyled">
                             <li><a href="">Membership</a></li>
                             <li><a href="">Purchase Guide</a></li>
