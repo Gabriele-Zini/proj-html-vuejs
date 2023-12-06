@@ -118,7 +118,7 @@ Utilizziamo `reactive` come gestore dello stato dell'applicazione. La politica d
 ## Metodi e Logica
 
 la logica di questa web App riguarda fondamentalmente due componenti: **AppCard** e **AppBigCard**.
-1. in **AppBigCard** la logica è implementata per far scorrere gli avatar in avanti e indieto, stile carosello.  Nei data sono dichiarate le variabili currentIndex inizializzato a 0 e idArray inizializzato come un array vuoto. Appena caricata l'applicazione si inizializza l'array degli **id** degli avatar.
+1. in **AppBigCard** la logica è implementata per far scorrere gli avatar in avanti e indieto, stile carosello.  Nei data sono dichiarate le variabili currentIndex inizializzato a 0 e idArray inizializzato come un array vuoto. Appena caricata l'applicazione si inizializza l'array degli **id** degli avatar. Nel **data** dei singoli componenti sono stati inseriti a livello locale le variabili utili ai fini di gestirne la dinamicità.
    <br>
    
    ```javascript
