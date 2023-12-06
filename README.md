@@ -1,6 +1,17 @@
 # Applicazione MaxCoach Vue.js
 
 Il file principale è **`App.vue`** per la nostra applicazione Vue.js. L'applicazione è organizzata in tre componenti principali: l'header, il main e il footer. Utilizziamo anche `reactive` per la gestione dello stato attraverso il nostro store.
+Il numero totale dei componenti è **10**:
+- **AppAboutMe**
+- **AppBigCard**
+- **AppBook**
+- **AppButton**
+- **AppCard**
+- **AppClientLogo**
+- **AppFooter**
+- **AppHeader**
+- **AppMain**
+- **AppSocialLogos**
 
 ## Struttura dei Componenti Principali
 
