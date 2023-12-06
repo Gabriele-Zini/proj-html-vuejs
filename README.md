@@ -186,7 +186,11 @@ la logica di questa web App riguarda fondamentalmente due componenti: **AppCard*
             this.showAllPosts = !this.showAllPosts;
         },
     ```
+Infine si inserisce shouldHide in una classe dinamica tramite la direttiva v-bind:
 
+```javascript
+:class="{ 'ms_card col-md-4': item.price, 'd-none': item.title && shouldHide(index) }"
+```
 
 ## Stili
 Per quanto riguarda gli stili, stiamo utilizzando SCSS per mantenere il nostro codice CSS organizzato. Inoltre, abbiamo integrato Bootstrap versione 5.3.2 nel nostro progetto per sfruttare i componenti e gli stili predefiniti forniti dal framework.
