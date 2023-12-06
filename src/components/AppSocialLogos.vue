@@ -7,7 +7,7 @@ export default {
     },
     props: {
         style: Object,
-        hasPrimary:Boolean,
+        hasPrimary: Boolean,
     }
 }
 </script>
@@ -30,15 +30,13 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/_variables.scss' as *;
 
-.primary-logos-color {
-    text-decoration: none;
-    color: $secondary-header-color
-}
-
 .secondary-logos-color {
     color: $primary-footer-color;
 }
 
+.primary-logos-color {
+    text-decoration: none;
+    color: $primary-logos-color;
 
-
+}
 </style>

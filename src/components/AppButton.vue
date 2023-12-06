@@ -30,5 +30,9 @@ export default {
         text-transform: capitalize;
         font-weight: bolder;
         text-decoration: none;
+
+        &:hover {
+            background-color:$button-hover;
+        }
     }
 </style>

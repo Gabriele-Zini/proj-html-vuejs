@@ -11,6 +11,9 @@ export default {
             isArrow: true, //variabile booleana per gestire i bottoni con e senza freccia
             hasPrimary:true,
             href:"", //href del button
+            style: {
+                fontSize: "1.2rem",
+            },
 
 
         }
@@ -48,7 +51,7 @@ export default {
                 <!-- /menu items list -->
 
                 <!-- social logo link list -->
-                <AppSocialLogos :hasPrimary="hasPrimary" />
+                <AppSocialLogos :hasPrimary="hasPrimary" :style="style" />
                 <!-- /social logo link list -->
 
 
