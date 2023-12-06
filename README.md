@@ -164,8 +164,8 @@ la logica di questa web App riguarda fondamentalmente due componenti: **AppCard*
         }
     ```
 
-    successivamente, nei methods, si implementano due funzioni: una per determinare la condizione per far non far visualizzare le card il cui indice è al di sopra del valore di default dichiarato in **maxVisiblePosts**  e una funzione toggle per mostrare o nascondare tutte le card ad ogni click. L'espressione  `this.showAllPosts = !this.showAllPosts;` ci permette di implementare una funzionalità tipica dei toggles all'interno di una direttiva `@click=""`
-    <br>
+    successivamente, nei methods, si implementano due funzioni: una per determinare la condizione per far non far visualizzare le card il cui indice è al di sopra del valore di default dichiarato in **maxVisiblePosts**  e una funzione toggle per mostrare o nascondare tutte le card ad ogni click. L'espressione  `this.showAllPosts = !this.showAllPosts;` ci permette di implementare una funzionalità tipica dei toggles all'interno di una direttiva **@click=""**
+
 
     ```javascript
       /* metodo per determinare la condizione per far visualizzare di default solo i primi 4 posts */
