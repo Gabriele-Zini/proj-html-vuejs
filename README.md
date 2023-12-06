@@ -153,6 +153,7 @@ la logica di questa web App riguarda fondamentalmente due componenti: **AppCard*
    <br>
 
     ```javascript
+    
      data() {
         return {
             store,
